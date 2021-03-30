@@ -13,7 +13,7 @@
             {% raw %}{{ if eq (len .Providers) 1}}
               <a class="pf-c-button pf-m-primary pf-m-block" href="{{ (index .Providers 0).URL }}">{{ .Locale.LogIn }}</a>
             {{ else }}
-              <h1 class="pf-c-title pf-m-3xl">{{ .Locale.LogInWith }}&hellip;</h1>
+              <h1 class="pf-c-title pf-m-3xl">{{ .Locale.LogInWith }}</h1>
               <ul>
                 {{ range $provider := .Providers }}
                   <li class="idp">
@@ -24,9 +24,6 @@
             {{ end }}{% endraw %}
           </div>
         </main>
-        <footer class="pf-c-login__footer">
-          {{ content }}
-        </footer>
       </div>
     </div>
   </body>

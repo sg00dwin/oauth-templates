@@ -8,12 +8,12 @@
         <header class="pf-c-login__header">
           {% include logos.html %}
         </header>
-        <main class="pf-c-login__main">
+        {% raw %}<main class="pf-c-login__main">
           <header class="pf-c-login__main-header">
             <h1 class="pf-c-title pf-m-3xl">{{ .Locale.LogInToYourAccount }}</h1>
           </header>
           <div class="pf-c-login__main-body">
-            {% raw %}<form class="pf-c-form" role="form" action="{{ .Action }}" method="POST">
+            <form class="pf-c-form" role="form" action="{{ .Action }}" method="POST">
               <input type="hidden" name="{{ .Names.Then }}" value="{{ .Values.Then }}">
               <input type="hidden" name="{{ .Names.CSRF }}" value="{{ .Values.CSRF }}">
               <div class="error-placeholder">
@@ -43,11 +43,11 @@
               <div class="pf-c-form__group pf-m-action">
                 <button class="pf-c-button pf-m-primary pf-m-block" type="submit" tabindex="3">{{ .Locale.LogIn }}</button>
               </div>
-            </form>{% endraw %}
+            </form>
           </div>
-        </main>
+        </main>{% endraw %}
         <footer class="pf-c-login__footer">
-          <p>{{ .Locale.WelcomeTo }} {{ collection.name }}.</p>
+          <p>{% raw %}{{ .Locale.WelcomeTo }}{% endraw %} {{ collection.name }}</p>
         </footer>
       </div>
     </div>
